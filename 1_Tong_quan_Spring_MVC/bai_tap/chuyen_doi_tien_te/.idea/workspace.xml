@@ -25,51 +25,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca11492a-57ed-47f9-9342-6ca540cb9a6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Converter.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/src/main/java/controllers/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/src/main/webapp/WEB-INF/views/dictionary.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/classes/controllers/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/classes/controllers/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-aop-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-beans-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-context-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-core-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-expression-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-web-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/lib/spring-webmvc-4.3.16.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/views/dictionary.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/target/tu_dien/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tu_dien/tu_dien.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/demo_Spring/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/demo_Spring/src/main/java/controllers/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/demo_Spring/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/demo_Spring/src/main/webapp/WEB-INF/views/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../New Text Document.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/6.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/modules/Spring-email-validation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/build/classes/java/main/controllers/EmailController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/build/tmp/war/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/src/main/java/controllers/EmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../2_Spring_Controller/thuc_hanh/Spring-email-validation/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +105,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../chuyen_doi_tien_te" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -201,6 +196,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597889051615</updated>
       <workItem from="1597889057898" duration="2529000" />
+      <workItem from="1597893896377" duration="3426000" />
     </task>
     <servers />
   </component>
@@ -217,6 +213,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -226,61 +223,61 @@
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
     <state x="206" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.1000@0.0.1500.1000" timestamp="1597889391350" />
-    <state x="531" y="255" key="FileChooserDialogImpl" timestamp="1597889176968">
+    <state x="531" y="255" key="FileChooserDialogImpl" timestamp="1597913331728">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state x="531" y="255" key="FileChooserDialogImpl/0.0.1500.1000@0.0.1500.1000" timestamp="1597889176968" />
-    <state width="998" height="269" key="GridCell.Tab.0.bottom" timestamp="1597891024262">
+    <state x="531" y="255" key="FileChooserDialogImpl/0.0.1500.1000@0.0.1500.1000" timestamp="1597913331728" />
+    <state width="998" height="269" key="GridCell.Tab.0.bottom" timestamp="1597919342362">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.0.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024262" />
-    <state width="998" height="269" key="GridCell.Tab.0.center" timestamp="1597891024262">
+    <state width="998" height="269" key="GridCell.Tab.0.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342362" />
+    <state width="998" height="269" key="GridCell.Tab.0.center" timestamp="1597919342362">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.0.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024262" />
-    <state width="998" height="269" key="GridCell.Tab.0.left" timestamp="1597891024262">
+    <state width="998" height="269" key="GridCell.Tab.0.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342362" />
+    <state width="998" height="269" key="GridCell.Tab.0.left" timestamp="1597919342361">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.0.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024262" />
-    <state width="998" height="269" key="GridCell.Tab.0.right" timestamp="1597891024262">
+    <state width="998" height="269" key="GridCell.Tab.0.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342361" />
+    <state width="998" height="269" key="GridCell.Tab.0.right" timestamp="1597919342362">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.0.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024262" />
-    <state width="998" height="269" key="GridCell.Tab.1.bottom" timestamp="1597891024263">
+    <state width="998" height="269" key="GridCell.Tab.0.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342362" />
+    <state width="998" height="269" key="GridCell.Tab.1.bottom" timestamp="1597919342364">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.1.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024263" />
-    <state width="998" height="269" key="GridCell.Tab.1.center" timestamp="1597891024263">
+    <state width="998" height="269" key="GridCell.Tab.1.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342364" />
+    <state width="998" height="269" key="GridCell.Tab.1.center" timestamp="1597919342363">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.1.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024263" />
-    <state width="998" height="269" key="GridCell.Tab.1.left" timestamp="1597891024263">
+    <state width="998" height="269" key="GridCell.Tab.1.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342363" />
+    <state width="998" height="269" key="GridCell.Tab.1.left" timestamp="1597919342362">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.1.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024263" />
-    <state width="998" height="269" key="GridCell.Tab.1.right" timestamp="1597891024263">
+    <state width="998" height="269" key="GridCell.Tab.1.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342362" />
+    <state width="998" height="269" key="GridCell.Tab.1.right" timestamp="1597919342363">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.1.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024263" />
-    <state width="998" height="269" key="GridCell.Tab.2.bottom" timestamp="1597891024264">
+    <state width="998" height="269" key="GridCell.Tab.1.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342363" />
+    <state width="998" height="269" key="GridCell.Tab.2.bottom" timestamp="1597919342368">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.2.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024264" />
-    <state width="998" height="269" key="GridCell.Tab.2.center" timestamp="1597891024263">
+    <state width="998" height="269" key="GridCell.Tab.2.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342367" />
+    <state width="998" height="269" key="GridCell.Tab.2.center" timestamp="1597919342366">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.2.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024263" />
-    <state width="998" height="269" key="GridCell.Tab.2.left" timestamp="1597891024263">
+    <state width="998" height="269" key="GridCell.Tab.2.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342366" />
+    <state width="998" height="269" key="GridCell.Tab.2.left" timestamp="1597919342365">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.2.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024263" />
-    <state width="998" height="269" key="GridCell.Tab.2.right" timestamp="1597891024264">
+    <state width="998" height="269" key="GridCell.Tab.2.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342365" />
+    <state width="998" height="269" key="GridCell.Tab.2.right" timestamp="1597919342367">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="998" height="269" key="GridCell.Tab.2.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597891024264" />
-    <state x="175" y="161" key="new project wizard" timestamp="1597889784015">
+    <state width="998" height="269" key="GridCell.Tab.2.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597919342367" />
+    <state x="175" y="161" key="new project wizard" timestamp="1597913376472">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state x="175" y="161" key="new project wizard/0.0.1500.1000@0.0.1500.1000" timestamp="1597889784015" />
+    <state x="175" y="161" key="new project wizard/0.0.1500.1000@0.0.1500.1000" timestamp="1597913376472" />
   </component>
 </project>
