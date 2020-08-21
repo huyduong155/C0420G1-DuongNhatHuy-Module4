@@ -14,8 +14,8 @@
 <h1>Calculator</h1>
 <form action="calculator">
     <div style="margin-bottom: 15px">
-        <input type="text" name="num1">
-        <input type="text" name="num2"><br>
+        <input type="text" name="num1" placeholder="number 1">
+        <input type="text" name="num2" placeholder="number 2"><br>
     </div>
     <input type="submit" name="calculate" value="Addition(+)">
     <input type="submit" name="calculate" value="Subtraction(-)">
@@ -23,6 +23,7 @@
     <input type="submit" name="calculate" value="Division(/)">
 
     <p>Result :${result}</p>
+    <p>${message}</p>
 
 </form>
 

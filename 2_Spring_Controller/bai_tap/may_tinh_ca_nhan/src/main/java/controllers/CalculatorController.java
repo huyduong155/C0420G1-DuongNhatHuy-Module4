@@ -12,7 +12,7 @@ public class CalculatorController {
         return "calculator";
     }
     @RequestMapping("/calculator")
-    public String addition(@RequestParam String num1, String num2,String calculate, Model model){
+    public String addition(@RequestParam(defaultValue = "0") String num1,@RequestParam(defaultValue = "0") String num2,String calculate, Model model){
         double result = 0;
         switch (calculate){
             case "Addition(+)":
@@ -25,7 +25,11 @@ public class CalculatorController {
                 result = Double.parseDouble(num1) * Double.parseDouble(num2);
                 break;
             case "Division(/)":
-                result = Double.parseDouble(num1) / Double.parseDouble(num2);
+                if (Double.parseDouble(num2) != 0){
+                    result = Double.parseDouble(num1) / Double.parseDouble(num2);
+                }else {
+                    model.addAttribute("message","number 2 is not = 0");
+                }
                 break;
         }
         model.addAttribute("result",result);
