@@ -12,7 +12,7 @@ public class CalculatorController {
         return "calculator";
     }
     @RequestMapping("/calculator")
-    public String addition(@RequestParam(defaultValue = "0") String num1,@RequestParam(defaultValue = "0") String num2,String calculate, Model model){
+    public String addition(@RequestParam(name = "num1",defaultValue = "0") String num1,@RequestParam(name = "num2",defaultValue = "0") String num2,@RequestParam(name = "calculate") String calculate, Model model){
         double result = 0;
         switch (calculate){
             case "Addition(+)":
