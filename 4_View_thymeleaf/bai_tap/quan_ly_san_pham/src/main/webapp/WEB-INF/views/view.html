@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:object="${product}">
+                <div class="modal-header" style="background: dimgray">
+                    <h4 class="modal-title" style="color: #e9e9e9">Note Details</h4>
+                    <a th:href="@{/}"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>Name :</td>
+                            <td  th:text="*{name}"></td>
+                        </tr>
+                        <tr>
+                            <td>Price :</td>
+                            <td  th:text="*{price}"></td>
+                        </tr>
+                        <tr>
+                            <td>Product Description :</td>
+                            <td  th:text="*{productDescription}"></td>
+                        </tr>
+                        <tr>
+                            <td>Producer :</td>
+                            <td th:text="*{producer}"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <a th:href="@{/}"><input type="button" class="btn btn-secondary" data-dismiss="modal" value="Back"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
