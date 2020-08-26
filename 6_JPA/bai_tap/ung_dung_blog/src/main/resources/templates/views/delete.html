@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/views/layout :: head">
+</head>
+<body>
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/blog/delete}" method="post" th:object="${blog}">
+                <div class="modal-header" style="background: dimgray">
+                    <h4 class="modal-title" style="color: #e9e9e9">Delete Blog</h4>
+                    <a th:href="@{/}"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" th:field="*{id}" class="form-control">
+                    </div>
+                    <table>
+                        <tr>
+                            <td>Title :</td>
+                            <td  th:text="*{titleBlog}"></td>
+                        </tr>
+                        <tr>
+                            <td>Content :</td>
+                            <td  th:text="*{contentBlog}"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <a th:href="@{/}"><input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancel"></a>
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

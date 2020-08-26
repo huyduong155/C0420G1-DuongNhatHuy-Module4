@@ -5,6 +5,7 @@
 
 </head>
 <body>
+
 <div class="container-lg">
     <div class="table-responsive">
         <div class="table-wrapper" style="background-color:#f7f5f2 ">
@@ -24,6 +25,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="notify">
+                <div th:if="${success}">
+                    <span th:text="${success}"></span>
                 </div>
             </div>
             <table class="table table-striped" >
