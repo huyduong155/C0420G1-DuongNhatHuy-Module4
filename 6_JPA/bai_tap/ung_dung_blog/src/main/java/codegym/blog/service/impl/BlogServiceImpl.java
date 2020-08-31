@@ -4,6 +4,8 @@ import codegym.blog.model.Blog;
 import codegym.blog.repository.BlogRepository;
 import codegym.blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +14,8 @@ public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogRepository blogRepository;
     @Override
-    public List<Blog> findAll() {
-        return blogRepository.findAll();
+    public Page<Blog> findAll(Pageable pageable) {
+        return blogRepository.findAll(pageable);
     }
 
     @Override

@@ -4,6 +4,8 @@ import codegym.customer.model.Customer;
 import codegym.customer.repository.CustomerRepository;
 import codegym.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +14,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     @Override
-    public List<Customer> findAll() {
-        return customerRepository.findAll();
+    public Page<Customer> findAll(String name,Pageable pageable) {
+        return customerRepository.findAllByFirstNameContaining(name,pageable);
     }
 
     @Override

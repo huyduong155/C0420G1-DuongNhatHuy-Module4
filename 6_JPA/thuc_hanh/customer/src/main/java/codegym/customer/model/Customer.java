@@ -2,6 +2,8 @@ package codegym.customer.model;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 public class Customer {
     @Id
@@ -9,6 +11,10 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+
+    @ManyToOne
+    @JoinColumn(name = "id_province")
+    private Province province;
 
     public Customer() {}
 
@@ -44,5 +50,12 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    public Province getProvinces() {
+        return province;
+    }
+
+    public void setProvinces(Province provinces) {
+        this.province = provinces;
     }
 }

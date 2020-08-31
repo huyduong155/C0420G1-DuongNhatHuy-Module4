@@ -2,12 +2,13 @@ package codegym.customer.controller;
 
 import codegym.customer.model.Customer;
 import codegym.customer.service.CustomerService;
+import codegym.customer.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -16,11 +17,14 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private ProvinceService provinceService;
     @GetMapping("/")
-    public ModelAndView listCustomers(){
-        List<Customer> customers = customerService.findAll();
+    public ModelAndView listCustomers(@PageableDefault(3)Pageable pageable, @RequestParam(value = "search",defaultValue = "")String search){
+        Page<Customer> customers = customerService.findAll(search,pageable);
         ModelAndView modelAndView = new ModelAndView("/customer/list");
         modelAndView.addObject("customers", customers);
+        modelAndView.addObject("search",search);
         return modelAndView;
     }
 
@@ -28,6 +32,7 @@ public class CustomerController {
     public ModelAndView showCreateForm(){
         ModelAndView modelAndView = new ModelAndView("/customer/create");
         modelAndView.addObject("customer", new Customer());
+        modelAndView.addObject("provinces",provinceService.findAllProvince());
         return modelAndView;
     }
 
@@ -35,7 +40,6 @@ public class CustomerController {
     public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer){
         customerService.save(customer);
         ModelAndView modelAndView = new ModelAndView("/customer/create");
-        modelAndView.addObject("customer", new Customer());
         modelAndView.addObject("message", "New customer created successfully");
         return modelAndView;
     }
@@ -45,10 +49,11 @@ public class CustomerController {
         if(customer != null) {
             ModelAndView modelAndView = new ModelAndView("/customer/edit");
             modelAndView.addObject("customer", customer);
+            modelAndView.addObject("provinces",provinceService.findAllProvince());
             return modelAndView;
 
         }else {
-            ModelAndView modelAndView = new ModelAndView("/error.404");
+            ModelAndView modelAndView = new ModelAndView("/customer/error.404");
             return modelAndView;
         }
     }
