@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body style="background-image: url('https://cdn.lifestyleasia.com/wp-content/uploads/2018/09/11142931/The-Nautilus-Maldives-Beach-Residence-exterior-1.jpg')">
+<div class="header">
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="col-3">
+                <img style="width: 30%;padding: 15px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlTaPPCcmHWMt6vGZ5QyfBTCSLcbmOys20dg&usqp=CAU">
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+            <div class="col-3" style="display: flex;align-items: center">
+                <h3 style="color: white">Dương Nhật Huy</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end header-->
+
+<div class="menu" style="background-color: #2d3338;height: 50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-12" >
+                <ul style="list-style: none;display:flex;flex-direction: row;padding-top: 12px">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/customer">Customer</a></li>
+                    <li>  <a href="">Service</a></li>
+                    <li><a href="">Contract</a></li>
+                    <li class="input-group" style="margin: -6px">
+                        <input type="text" id="search" class="form-control" placeholder="Search by Name">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/contract-detail/save}" method="post" th:object="${contractDetail}">
+                <div class="modal-header" style="background: #2d3338">
+                    <h4 class="modal-title" style="color: #e9e9e9">Add New Contract</h4>
+                    <a href="/"><button type="button" class="close"  aria-hidden="true">&times;</button></a>
+                </div>
+                <div class="notify" style="color: red ;text-align: center">
+                    <div th:if="${success}">
+                        <span th:text="${success}"></span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Quantily:</label>
+                        <input type="text" class="form-control" th:field="*{quantity}">
+                    </div>
+                    <div class="form-group">
+                        <label>Contract number :</label>
+                        <select name="contract" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <option th:each="con :${contract}" th:value="${con.id}" th:text="${con.id}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Attach Service :</label>
+                        <select name="attachService" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <option th:each="att :${attach}" th:value="${att.id}" th:text="${att.name}"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/"><input type="button" class="btn btn-secondary"  value="Cancel"></a>
+                    <input type="submit" class="btn btn-primary" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

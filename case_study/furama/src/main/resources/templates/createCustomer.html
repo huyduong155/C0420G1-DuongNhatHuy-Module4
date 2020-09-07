@@ -67,6 +67,7 @@
                     <div class="form-group">
                         <label>Phone : </label>
                         <input type="text" class="form-control"  placeholder="09xx" th:field="*{phoneNumber}">
+                        <div><p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p></div>
                     </div>
                     <div class="form-group">
                         <label>Email : </label>

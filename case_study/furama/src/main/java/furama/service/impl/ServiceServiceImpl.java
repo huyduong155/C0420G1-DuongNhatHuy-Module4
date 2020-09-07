@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ServiceServiceImpl implements ServiceService {
     @Autowired
@@ -14,6 +16,11 @@ public class ServiceServiceImpl implements ServiceService {
     @Override
     public Page<furama.model.Service> findAll(Pageable pageable) {
         return serviceRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<furama.model.Service> findAll() {
+        return serviceRepository.findAll();
     }
 
     @Override

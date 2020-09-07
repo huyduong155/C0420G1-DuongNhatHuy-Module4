@@ -1,8 +1,10 @@
 package furama.model;
 
 import org.springframework.stereotype.Component;
+import validate.PhoneNumber;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -17,6 +19,8 @@ public class Customer {
 
     private String IdCard;
 
+    @PhoneNumber
+//    @Size(min = 10,max = 11)
     private String phoneNumber;
 
     private String email;

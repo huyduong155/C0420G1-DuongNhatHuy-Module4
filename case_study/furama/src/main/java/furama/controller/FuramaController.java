@@ -1,5 +1,7 @@
 package furama.controller;
 
+import furama.model.Contract;
+import furama.model.ContractDetail;
 import furama.model.Customer;
 import furama.model.Service;
 import furama.service.*;
@@ -8,12 +10,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class FuramaController {
@@ -31,6 +39,15 @@ public class FuramaController {
 
     @Autowired
     private ServiceTypeService serviceTypeService;
+
+    @Autowired
+    private ContractService contractService;
+
+    @Autowired
+    private ContractDetailService contractDetailService;
+
+    @Autowired
+    private AttachServiceService attachServiceService;
 
     @GetMapping("/")
     public String getFormHome(){
@@ -51,7 +68,11 @@ public class FuramaController {
         return modelAndView;
     }
     @PostMapping("/customer/save")
-    public String saveCustomer(@ModelAttribute("customer") Customer customer, RedirectAttributes redirectAttributes){
+    public String saveCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult result, RedirectAttributes redirectAttributes, Model model){
+       if (result.hasFieldErrors()){
+           model.addAttribute("customerType",customerTypeService.findAll());
+           return "createCustomer";
+       }
         customerService.save(customer);
         redirectAttributes.addFlashAttribute("success", "Saved customer successfully!");
         return "redirect:/customer";
@@ -156,18 +177,40 @@ public class FuramaController {
         redirectAttributes.addFlashAttribute("success", "Deleted service successfully!");
         return "redirect:/service";
     }
-    @GetMapping("/contract/create")
-    public ModelAndView showCreateFormContract(){
+    @GetMapping("/contract/{id}/create")
+    public ModelAndView showCreateContract(@PathVariable String id){
+        Customer customer = customerService.findById(id);
+        String idCus = customer.getId();
         ModelAndView modelAndView = new ModelAndView("createContract");
-        modelAndView.addObject("contract", new Service());
-        modelAndView.addObject("rentType",rentTypeService.findAll());
-        modelAndView.addObject("serviceType",serviceTypeService.findAll());
+        modelAndView.addObject("contract", new Contract());
+        modelAndView.addObject("service",serviceService.findAll());
+        modelAndView.addObject("customer",idCus);
         return modelAndView;
     }
+
     @PostMapping("/contract/save")
-    public String saveContract(@ModelAttribute("contract") Service service, RedirectAttributes redirectAttributes){
-        serviceService.save(service);
+    public String saveContract(@ModelAttribute("contract") Contract contract, RedirectAttributes redirectAttributes){
+        contractService.save(contract);
         redirectAttributes.addFlashAttribute("success", "Saved contract successfully!");
-        return "redirect:/service";
+        return "redirect:/";
+    }
+    @GetMapping("/contract-detail/create")
+    public ModelAndView showCreateFormContractDetail(){
+        ModelAndView modelAndView = new ModelAndView("createContractDetail");
+        modelAndView.addObject("contractDetail", new ContractDetail());
+        modelAndView.addObject("contract",contractService.findAll());
+        modelAndView.addObject("attach",attachServiceService.findAll());
+        return modelAndView;
+    }
+    @PostMapping("/contract-detail/save")
+    public String saveContractDetail(@ModelAttribute("contractDetail") ContractDetail contractDetail, RedirectAttributes redirectAttributes){
+        contractDetailService.save(contractDetail);
+        redirectAttributes.addFlashAttribute("success", "Saved contract detail successfully!");
+        return "redirect:/contract-detail/create";
+    }
+    @GetMapping("/customer-service")
+    public ModelAndView listCustomerService(@PageableDefault(value = 5) Pageable pageable){
+        Page<Contract> contracts= contractService.findAllCusUseSer(pageable);
+        return new ModelAndView("listCustomerService","contracts",contracts);
     }
 }
