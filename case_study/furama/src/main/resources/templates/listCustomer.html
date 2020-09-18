@@ -1,53 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head">
+<head th:replace="/layout::head">
+    <meta charset="UTF-8">
+    <title>Customer</title>
 </head>
-<body style="background-image: url('https://cdn.lifestyleasia.com/wp-content/uploads/2018/09/11142931/The-Nautilus-Maldives-Beach-Residence-exterior-1.jpg')">
-<div class="header">
-    <div class="container-fluid">
-        <div class="row" >
-            <div class="col-3">
-                <img style="width: 30%;padding: 15px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlTaPPCcmHWMt6vGZ5QyfBTCSLcbmOys20dg&usqp=CAU">
-            </div>
-            <div class="col-3"></div>
-            <div class="col-3"></div>
-            <div class="col-3" style="display: flex;align-items: center">
-                <h3 style="color: white">Dương Nhật Huy</h3>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end header-->
+<body>
 
-<div class="menu" style="background-color: #2d3338;height: 50px">
-    <div class="container">
-        <div class="row">
-            <div class="col-12" style="margin-left: 100px" >
-                <ul style="list-style: none;display:flex;flex-direction: row;padding-top: 12px">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/customer">Customer</a></li>
-                    <li>  <a href="/service">Service</a></li>
-                    <li class="input-group" style="margin: -6px;padding-right: 200px">
-                        <input type="text" id="search" class="form-control" placeholder="Search by Name">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<th:block th:include="/menu"></th:block>
 <!--end menu-->
-<br><br>
+<!--<br><br>-->
 <div>
-    <div class="content" style="height: 71vh">
+    <div class="content" style="height: 80vh">
         <div class="container-fluid">
             <div class="row" >
-                <div class="col-2" style="display: flex;flex-direction: column;margin-top: 85px" >
-                    <a href="/customer/create" class="btn btn-primary"  style="margin: 3px"><i class="fa fa-plus"></i> <span>Add New Customer</span></a>
-                    <a href="/customer-service" class="btn btn-primary"  style="margin: 3px"><span>List Customer Use Service</span></a>
+                <div class="col-2" style="display: flex;flex-direction: column" >
+                    <!--                <a class="btn btn-primary mt-1" href="#addEmployeeModal" data-toggle="tooltip">Item 1</a>-->
+                    <a href="/customer/create"  class="a" style="margin-top: 70px"><i class="fa fa-plus"></i> Add New Customer</a>
+                    <a href="/customer-service"  class="a" style="margin-top: 50px">List Customer Use Service</a>
                 </div>
-                <div class="col-10" style="margin-top: 28px">
-                    <h2 style="color: aliceblue ;text-align: center">List All Customer</h2>
+                <div class="col-10">
+                    <h2 class="neon" data-text="List Of Customer">List Of Customer</h2>
+                    <form action="/customer" >
+                    <div class="search-box">
+                            <input class="search-txt" type="text" name="search" placeholder="Type to search" th:value="${search}">
+                            <button class="search-btn" ><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                    </form>
                     <div class="notify" style="color: red ;text-align: center">
                         <div th:if="${success}">
                             <span th:text="${success}"></span>
@@ -79,16 +58,16 @@
                                 <th th:text="${customer.customerType.nameCustomerType}"></th>
                                 <td>
                                     <a  th:href="@{/customer/{id}/edit(id=${customer.getId()})}" class="edit" title="Edit" ><i class="material-icons">&#xE254;</i></a>
-                                    <a th:href="@{/customer/{id}/delete(id=${customer.getId()})}" class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
-                                    <a th:href="@{/contract/{id}/create(id=${customer.getId()})}" class="add" title="Add contract"><i style="color: limegreen" class="material-icons">&#xe145;</i></a>
+                                    <a th:href="@{/customer/{id}/delete(id=${customer.getId()})}"  title="Delete" style="color: red"><i class="material-icons">&#xE872;</i></a>
+                                    <a th:href="@{/contract/{id}/create(id=${customer.getId()})}" title="Add contract"><i style="color: limegreen" class="material-icons">&#xe145;</i></a>
                                 </td>
                             </tr>
                         </c:forEach>
                         </tbody>
                     </table>
-                    <a th:href="@{'/'(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}">Previous</a>
+                    <a th:href="@{'/customer/'(page=${customers.number - 1},search=${search})}" th:if="${customers.hasPrevious()}">Previous</a>
                     <span th:text="${customers.number + 1}"style="color: black"></span>/<span th:text="${customers.totalPages}" style="color: black"></span>
-                    <a th:href="@{'/'(page=${customers.number + 1})}" th:if="${customers.hasNext()}">Next</a>
+                    <a th:href="@{'/customer/'(page=${customers.number + 1},search=${search})}" th:if="${customers.hasNext()}">Next</a>
                 </div>
             </div>
         </div>

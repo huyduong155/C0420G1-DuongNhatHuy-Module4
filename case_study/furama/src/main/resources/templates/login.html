@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+
+</head>
+<body>
+
+<div class="header">
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="col-3">
+                <img style="width: 30%;padding: 15px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlTaPPCcmHWMt6vGZ5QyfBTCSLcbmOys20dg&usqp=CAU">
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+            <div class="col-3" style="display: flex;align-items: center;float: right;justify-content: center">
+                <a href="" style="text-decoration: none;margin-right: 20px">Registration</a>
+                <a  href="#login"  data-toggle="modal" style="text-decoration: none">Sign in</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end header-->
+<nav>
+    <ul>
+        <li><a href="/home">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Home
+        </a>
+        </li>
+        <li>
+            <a href="">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Employee
+            </a>
+        </li>
+        <li><a href="/customer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Customer
+        </a>
+        </li>
+        <li>  <a href="/service">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Service
+        </a>
+        </li>
+        <li><a href="">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Contract
+        </a>
+        </li>
+    </ul>
+</nav>
+
+
+<!--login-->
+<div class="container modal" id="login">
+    <div class="login-form">
+        <form class="box" action="/home">
+            <button type="button" class="close" data-dismiss="modal" style="float: right;" aria-hidden="true">&times;</button>
+            <h1>Login</h1>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+</body>
+</html>

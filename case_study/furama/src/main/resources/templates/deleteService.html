@@ -1,48 +1,19 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head">
-</head>
-<body style="background-image: url('https://cdn.lifestyleasia.com/wp-content/uploads/2018/09/11142931/The-Nautilus-Maldives-Beach-Residence-exterior-1.jpg')">
-<div class="header">
-    <div class="container-fluid">
-        <div class="row" >
-            <div class="col-3">
-                <img style="width: 30%;padding: 15px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlTaPPCcmHWMt6vGZ5QyfBTCSLcbmOys20dg&usqp=CAU">
-            </div>
-            <div class="col-3"></div>
-            <div class="col-3"></div>
-            <div class="col-3" style="display: flex;align-items: center">
-                <h3 style="color: white">Dương Nhật Huy</h3>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end header-->
+<head th:replace="/layout::head">
 
-<div class="menu" style="background-color: #2d3338;height: 50px">
-    <div class="container">
-        <div class="row">
-            <div class="col-12" >
-                <ul style="list-style: none;display:flex;flex-direction: row;padding-top: 12px">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/customer">Customer</a></li>
-                    <li>  <a href="/service">Service</a></li>
-                    <li><a href="">Contract</a></li>
-                    <li class="input-group" style="margin: -6px">
-                        <input type="text" id="search" class="form-control" placeholder="Search by Name">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+
 <div>
     <div class="modal-dialog">
         <div class="modal-content">
             <form th:action="@{/service/delete}" method="post" th:object="${service}">
-                <div class="modal-header" style="background: #2d3338">
-                    <h4 class="modal-title" style="color: #e9e9e9">Delete Service</h4>
+                <div class="modal-header">
+                    <h4 class="neon" style="margin: 0">Delete Service</h4>
                     <a href="/service"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
                 </div>
                 <div class="modal-body">
@@ -85,12 +56,12 @@
                     </table>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete these Records?</p>
+                    <p style="color: crimson">Are you sure you want to delete these Records?</p>
                     <p class="text-warning"><small>This action cannot be undone.</small></p>
                 </div>
                 <div class="modal-footer">
-                    <a href="/service"><input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancel"></a>
-                    <input type="submit" class="btn btn-danger" value="Delete">
+                    <a href="/service"><input type="button" class="cancel" data-dismiss="modal" value="Cancel"></a>
+                    <input type="submit" class="delete" value="Delete">
                 </div>
             </form>
         </div>

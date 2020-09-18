@@ -14,8 +14,8 @@ public class ServiceServiceImpl implements ServiceService {
     @Autowired
     private ServiceRepository serviceRepository;
     @Override
-    public Page<furama.model.Service> findAll(Pageable pageable) {
-        return serviceRepository.findAll(pageable);
+    public Page<furama.model.Service> findAll(String search,Pageable pageable) {
+        return serviceRepository.findAllByAll(search,pageable);
     }
 
     @Override

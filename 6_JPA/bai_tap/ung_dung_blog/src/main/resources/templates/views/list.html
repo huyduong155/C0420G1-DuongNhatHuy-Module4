@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/views/layout :: head">
 
+<head th:replace="/views/layout :: head">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
+<div class="navbar">
+    <img src="CoventicWebpageImages/logo.png" class="logo" style="width: 100px;cursor: pointer">
+    <div>
+        <a  th:href="@{/}" ><button class="btn btn-secondary" type="button">home</button></a>
+        <a  th:href="@{/logout}" ><button class="btn btn-secondary" type="button">Logout</button></a>
+    </div>
+</div>
 <div class="container-lg">
     <div class="table-responsive">
         <div class="table-wrapper" style="background-color:#f7f5f2 ">
@@ -13,6 +20,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h2>Blog  <b>Management</b></h2>
+
                     </div>
                     <div class="col-sm-3">
                         <a th:href="@{/create}" class="btn btn-success" data-toggle="modal-dialog"><i class="fa fa-plus"></i> <span>Add New Blog</span></a>
@@ -57,17 +65,22 @@
 
                 <ul  style="display: flex ;list-style: none">
                     <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
-                    <a th:href="@{'/'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}"><button type="button" class="btn btn-secondary" style="margin-right: 5px">Previous</button></a>
+                    <a th:href="@{'/blog/'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}"><button type="button" class="btn btn-secondary" style="margin-right: 5px">Previous</button></a>
                     <li th:each="i: ${#numbers.sequence(1, blogs.getTotalPages())}">
-                        <a th:href="@{'/'(page=${i - 1}) }"><button type="button" class="btn btn-secondary" style="margin-right: 5px">[[${i}]]</button></a>
+                        <a th:href="@{'/blog/'(page=${i - 1}) }"><button type="button" class="btn btn-secondary" style="margin-right: 5px">[[${i}]]</button></a>
                     </li>
-                    <a th:href="@{'/'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}"><button type="button" class="btn btn-secondary"style="margin-right: 5px">Next</button></a>
+                    <a th:href="@{'/blog'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}"><button type="button" class="btn btn-secondary"style="margin-right: 5px">Next</button></a>
                 </ul>
 
 
             </div>
         </div>
     </div>
+</div>
+<div>
+    <h3 th:if="${message != null}" th:utext="${message}" style="color: red;"></h3>
+
+    <div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
 </div>
 </body>
 </html>

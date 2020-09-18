@@ -10,7 +10,7 @@
             <form th:action="@{/blog/update}" method="post" th:object="${blog}">
                 <div class="modal-header" style="background: dimgray">
                     <h4 class="modal-title" style="color: #e9e9e9">Edit Blog</h4>
-                    <a th:href="@{/}"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
+                    <a th:href="@{/blog}"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a th:href="@{/}"><input type="button" class="btn btn-secondary"  value="Cancel"></a>
+                    <a th:href="@{/blog}"><input type="button" class="btn btn-secondary"  value="Cancel"></a>
                     <input type="submit" class="btn btn-success" value="Save">
                 </div>
             </form>

@@ -12,14 +12,13 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,15 +49,24 @@ public class FuramaController {
     private AttachServiceService attachServiceService;
 
     @GetMapping("/")
+    public String getFormLogin(){
+        return "login";
+    }
+
+
+    @GetMapping("/home")
     public String getFormHome(){
         return "home";
     }
 
 
     @GetMapping("/customer")
-    public ModelAndView listCustomer(@PageableDefault(value = 5) Pageable pageable){
-        Page<Customer> customers= customerService.findAll(pageable);
-        return new ModelAndView("listCustomer","customers",customers);
+    public ModelAndView listCustomer(@PageableDefault(value = 5) Pageable pageable, @RequestParam(value = "search",defaultValue = "") String search){
+        ModelAndView modelAndView = new ModelAndView("listCustomer");
+        Page<Customer> customers= customerService.findAll(search,pageable);
+        modelAndView.addObject("customers",customers);
+        modelAndView.addObject("search",search);
+        return modelAndView;
     }
     @GetMapping("/customer/create")
     public ModelAndView showCreateForm(){
@@ -119,9 +127,12 @@ public class FuramaController {
     }
 
     @GetMapping("/service")
-    public ModelAndView listService(@PageableDefault(value = 5) Pageable pageable){
-        Page<Service> services= serviceService.findAll(pageable);
-        return new ModelAndView("listService","services",services);
+    public ModelAndView listService(@PageableDefault(value = 5) Pageable pageable,@RequestParam(value = "search",defaultValue = "") String search){
+        ModelAndView modelAndView = new ModelAndView("listService");
+        Page<Service> services= serviceService.findAll(search,pageable);
+        modelAndView.addObject("services",services);
+        modelAndView.addObject("search",search);
+        return modelAndView;
     }
     @GetMapping("/service/create")
     public ModelAndView showCreateFormService(){
@@ -132,7 +143,13 @@ public class FuramaController {
         return modelAndView;
     }
     @PostMapping("/service/save")
-    public String saveService(@ModelAttribute("service") Service service, RedirectAttributes redirectAttributes){
+    public String saveService(@Valid @ModelAttribute("service") Service service,BindingResult result, RedirectAttributes redirectAttributes,Model model){
+        if (result.hasFieldErrors()){
+          FieldError a = result.getFieldError();
+            model.addAttribute("rentType",rentTypeService.findAll());
+            model.addAttribute("serviceType",serviceTypeService.findAll());
+            return "createService";
+        }
         serviceService.save(service);
         redirectAttributes.addFlashAttribute("success", "Saved Service successfully!");
         return "redirect:/service";
@@ -192,7 +209,7 @@ public class FuramaController {
     public String saveContract(@ModelAttribute("contract") Contract contract, RedirectAttributes redirectAttributes){
         contractService.save(contract);
         redirectAttributes.addFlashAttribute("success", "Saved contract successfully!");
-        return "redirect:/";
+        return "redirect:/customer";
     }
     @GetMapping("/contract-detail/create")
     public ModelAndView showCreateFormContractDetail(){

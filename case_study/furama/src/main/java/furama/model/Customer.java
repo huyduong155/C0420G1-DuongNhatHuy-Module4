@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 import validate.PhoneNumber;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -11,18 +13,21 @@ import java.util.List;
 @Table(name = "customer")
 public class Customer {
     @Id
+    @Pattern(regexp = "KH-[\\d]{4}",message = "customer code is not format")
     private String id;
 
     private String name;
 
     private String birthday;
 
+    @Pattern(regexp = "[\\d]{9}",message = "must be a number and length =9 ")
     private String IdCard;
 
     @PhoneNumber
 //    @Size(min = 10,max = 11)
     private String phoneNumber;
 
+    @Email(message = "email is not format")
     private String email;
 
     private String address;

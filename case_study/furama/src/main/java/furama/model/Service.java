@@ -1,17 +1,26 @@
 package furama.model;
 
+import validate.Integer;
+
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
 public class Service {
     @Id
+    @Pattern(regexp = "DV-[\\d]{4}",message = "service code is not format")
     private String id;
 
     private String nameService;
 
+    @Integer
+//    @Min(0)
     private int area;
 
+//    @Integer
+    @Min(0)
     private int floor;
 
     private String numberOfPeople;

@@ -1,12 +1,18 @@
 package validate;
 
+
+import furama.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+
 @Configurable
 public class PhoneNumberValidation implements ConstraintValidator<PhoneNumber,String> {
-
+@Autowired
+private CustomerService customerService;
     @Override
     public void initialize(PhoneNumber constraintAnnotation) {
 
